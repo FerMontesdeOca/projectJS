@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./images/logo.png" />
+    <title>How to Create Dyamic Forms in React CRUD</title>
+</head>
+<body>
+    <header>
+        <div class="container-fluid fixed-top">        
+            <div class="row" id="principal">
+                <div class="col-5 d-flex align-content-center">  
+                    <nav class="navbar top d-flex justify-content-end d-md-none d-sm-block" id="menu">
+                        <div class="container ">
+                          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header">
+                              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">DEV Community 👩‍💻👨‍💻</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" id="menu__list">
+                                <li class="nav-item"><a class="nav-link active" href="#">🏠 Home</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">📖 Reading List</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">📃 Listings</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">🎙 Podcasts</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">🎥 Videos</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">🏷 Tags</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">💡 FAQ</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">🛍 Forem Shop</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">♥ Sponsors</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">⁉ About</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">📯 Contact</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">📖 Guides</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">🤔 Software Comparison</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">🏠 Home</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">🏠 Home</a></li>
+                              </ul>
+                              <div class="offcanvas-subtitle"><h5>Other</h5></div>
+                              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" id="menu__list2">
+                                <li class="nav-item"><a class="nav-link active" href="#">👍 Code of Conduct</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">😎 Privacy Policy</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#">📜 Terms of use</a></li>
+                              </ul>
+                              <div class="aside__icons__all">       
+                                <ul>
+                                    <li  class="nav-item"> <a href="#"><img src="./img/twitter-svgrepo-com.svg" width="30" height="30" alt="Twitter-icon" /></a></li>
+                                    <li  class="nav-item"><a href="#"><img src="./img/facebook-svgrepo-com.svg" width="30" height="30" alt="Facebook-icon" /></a></li>
+                                    <li  class="nav-item"><a href="#"><img src="./img/github-svgrepo-com.svg" width="30" height="30" alt="Github-icon" /></a></li>
+                                    <li  class="nav-item"> <a href="#"><img src="./img/instagram-alt-svgrepo-com.svg" width="30" height="30" alt="Instagram-logo" /></a></li>
+                                    <li  class="nav-item"> <a href="#"><img src="./img/twitch-svgrepo-com.svg" width="30" height="30" alt="twitch-logo" /></a>    </li>
+                                </ul>                                                                                  
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </nav>                    
+
+                 <div class="logo"><a href="index.html"><img src="./img/logo.png" width="50" height="50" alt=""></a></div>
+                    <nav class="navbar" id="search">
+                        <div class="container-fluid">
+                          <form class="d-flex" role="search" id="form__main">
+                            <input class="form-control me-5" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn" type="submit"><img src="./img/searchmagnifierinterfacesymbol1_79893.svg" width="30" height="30" alt=""></button>
+                         </form>
+                        </div>
+                      </nav>
+                </div>
+                <div class="col" >
+                    <div class="gral__icons">
+                        <button class="btn btn" type="submit" id="search__main"><img src="./img/searchmagnifierinterfacesymbol1_79893.svg" width="30" height="30" alt=""></button>
+                        <a class="btn btn-primary" href="#" id="boton">Create Post</a>
+                        <a href="#"><img src="./img/bell-svgrepo-com.svg" width="30" height="30" alt=""></a>
+                        <a href="#"><img src="./img/profile.jpg" width="30" height="30"  class="profile" alt=""></a>
+                    </div>
+                </div>
+            </div>       
+        </div>        
+    </header>
+    <main>
+        <div class="container-fluid d-flex justify-content-around">
+            <div class="col-2 d-sm-none d-md-block" id="aside__fixed">
+              <aside class="side-bar">
+                <ul>
+                  <li>
+                    <!-- <div class="art__heart"> -->
+                     <a href=""><img src="./img/heart-svgrepo-com.svg" width="30" height="30" alt=""></a>
+                     <p>4</p>
+                    <!-- </div> -->
+                  </li>
+                  <li>
+                    <div class="art__comment">
+                      <img src="./img/comment-svgrepo-com.svg" width="30" height="30" alt="">
+                      <p>0</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="art__save">
+                      <img src="./img/bookmark-save-svgrepo-com.svg" width="30" height="30" alt="">
+                      <p>4</p>
+                    </div>
+                  </li>
+                  <li>
+                     <div class="art__more">...</div>
+                  </li>
+                </ul>          
+              </aside>
+            </div>
+<!-- articulos -->
+
+            
+<!-- other aside -->
+
+            <div class="col-10 d-flex justify-content-between" id="merge__section">
+            <div class="container-fluid col-8" id="article__main">
+               <!--Card 2-->
+                <div class="card">
+                    <img class="rounded-top" src="./images/img-3.webp" alt="cat photo">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="container">
+                                <img src="./images/img-4.jpeg" class="rounded-circle float-start me-4" style="width: 3rem;" alt="Tia Eastwood photo">
+                            </div>    
+                            <div class="container">
+                                <h5>
+                                    Necati Özmen
+                                </h5>
+                                <small>
+                                    Nov 19 • Originally published at refine.dev
+                                </small>
+                            </div>
+                        </div>
+                        <h1 class="card-title mt-2">
+                            <a href="#" id="title-link">
+                                How to Create Dynamic Forms in React CRUD app with Ant Design
+                            </a>    
+                        </h1>
+                        <div class="card-body">
+                            <a href="#" class="card-link text-muted text-decoration-none" id="hashtag-link">
+                                #webdev
+                            </a>
+                            <a href="#" class="card-link text-muted text-decoration-none" id="hashtag-link">
+                                #react
+                            </a>
+                            <a href="#" class="card-link text-muted text-decoration-none" id="hashtag-link">
+                                #tutorial
+                            </a>
+                            <a href="#" class="card-link text-muted text-decoration-none" id="hashtag-link">
+                                #opensource
+                            </a>
+                        </div>
+
+                        <div class="container">
+                          <h5 class="pt-3">
+                            Author: <a href="#">David Omotayo</a>
+                          </h5>
+                          <h3 class="pt-3">
+                            Introduction
+                          </h3>
+                          <p class="pt-2">
+                            Forms are one of the most adaptable elements in web development. They come in distinct structures for various use cases.
+                          </p>
+                          <p class="pt-2">
+                            However, due to the sporadic complexity of the information they collect, they tend to grow larger with several fields, which can be a big turnoff for most users.
+                          </p>
+                          <p class="pt-2">
+                            To solve this user experience issue, developers devised a dynamic form, a simple yet complex form that can grow in size on command.
+                          </p>
+                          <p class="pt-2">
+                            This guide will teach us how to create a dynamic form using Ant design and refine's React template.
+                          </p>
+                          <p class="pt-2">
+                            Steps we'll cover:
+                          </p>
+                          <ul>
+                            <li>
+                              <a href="#">
+                                What is a dynamic form?
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                What is refine?
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                Project setup
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                Building the List page
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                Creating a form
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                Adding form items
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                Adding form list
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                Using form actions
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                Adding icons
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                Validation
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                Building the edit page
+                              </a>
+                            </li>
+                          </ul>
+                          <h5 class="pt-2">
+                            Prerequisite
+                          </h5>
+                          <p class="pt-2">
+                            To follow along with this tutorial, you need to have a good understanding of Typescript and the following:
+                          </p>
+                          <ul>
+                            <li>
+                              The latest version of Node.js installed on your machine
+                            </li>
+                            <li>
+                              Fundamental knowledge of React and <a href="#"> refine</a>
+                            </li>
+                            <li>
+                              Basic understanding of Ant design
+                            </li>
+                          </ul>
+                          <h3 class="pt-3">
+                            What is a dynamic form?
+                          </h3>
+                          <p class="pt-2">
+                            Dynamic forms are complex forms that change their layout according to the data they receive from users. In simpler terms, dynamic forms allow users to add or remove input fields according to their needs.
+                          </p>
+                          <p class="pt-2">
+                            For example, say you want to create a form that lets users provide optional extended information about themselves, but you don't want to greet every user with a behemoth form. You can create a dynamic form that allows users to add or remove input fields according to their needs.
+                          </p>
+                          <p class="pt-2">
+                            For context, here's an example of the final CRUD app product of the dynamic form we'll be building in this tutorial:
+                          </p>
+                          <div class="container-fluid ">
+                            <img width="100%" src="https://res.cloudinary.com/practicaldev/image/fetch/s--oQqJ5s7w--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h9ba2we0knhuvac8t744.gif" alt="gif">
+                          </div>
+                          <p class="pt-2">
+                            Ant design provides several components that let us build dynamic forms easily and rapidly. We'll learn more about these components later in this article.
+                          </p>
+                          <h3 class="pt-3">
+                            What is refine?
+                          </h3>
+                          <p class="pt-2">
+                            refine is a headless React-based framework for rapidly building CRUD applications like admin panels, dashboards, and internal tools. The framework uses a collection of helper hooks, components, and data-providers that give you complete control over your application's user interface.
+                          </p>
+                          <p class="pt-2">
+                            There are a lot of benefits to using refine in your applications, to name a few:
+                          </p>
+                          <ul>
+                            <li>
+                              refine is UI agnostic by default; its headless design lets it integrate seamlessly with different UI frameworks and custom designs.
+                            </li>
+                            <li>
+                              it has an easy learning curve
+                            </li>
+                            <li>
+                              refine is also backend agnostic by default; it has support for every backend technology.
+                            </li>
+                            <li>
+                              Authentication, state management, data fetching, and routing come out of the box.
+                            </li>
+                            <li>
+                              refine is open source, so you don't have to worry about constraints.
+                            </li>
+                          </ul>
+                          <p class="pt-2">
+                            One of refine's core features is its out-of-the-box integration with UI frameworks such as MUI and Ant design. We'll look at how to use the latter in this guide.
+                          </p>
+                          <h3 class="pt-3">
+                            Project setup
+                          </h3>
+                          <p class="pt-2">
+                            Before we go any further, let's set up a refine sample CRUD app project and install the required packages using superplate.
+                          </p>
+                          <p class="pt-2">
+                            Superplate is a CLI tool for quickly bootstrapping a refine project. The tool provides the option of setting up a headless refine project or a project paired with third-party UI libraries such as Ant design and Material UI. We'll be using the latter for this tutorial.
+                          </p>
+                          <p class="pt-2">
+                            As a first step, run the following command on your command line tool:
+                          </p>
+                          <img width="100%" src="https://res.cloudinary.com/practicaldev/image/fetch/s--37Q-6Den--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mhnts1wla0rti1lq50v7.png" alt="">
+                          <p class="pt-2">
+                            After running the command, the development server will automatically preview our app in the default browser. If it doesn't, open the browser manually and navigate to http://localhost:3000.
+                          </p>
+                          <img width="100%" src="https://res.cloudinary.com/practicaldev/image/fetch/s--cqivt7A9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n3b8f16g8ntx3yvvyxnc.png" alt="">
+                          <p class="pt-2">
+                            To finish setting up, we'll create a PostCreate, PostList, and PostEdit pages and pass them as values to the create, list, and edit properties of the resources prop in the <Refine> component, which you can find inside the App.tsx file.
+                          </p>
+                          <p class="pt-2">
+                            We'll use the PostList page to display a list of data from a fake API endpoint, to which we'll also post the submitted data from our form.
+                          </p>
+                          <p class="pt-2">
+                            The PostCreate page is where we'll create our dynamic form for posting new records to the API.
+                          </p>
+                          <p class="pt-2">
+                            The PostEdit page will house a copy of the dynamic form for editing and updating records.
+                          </p>
+                          <p class="pt-2">
+                            To begin with, create a pages folder inside the src folder and add a PostCreate.tsx, PostList.tsx, and PostEdit.tsx files, as shown below.
+                          </p>
+                          <img class="mx-auto d-block" width="30%" src="https://res.cloudinary.com/practicaldev/image/fetch/s--gS-1znhd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vcqykc614u1y0zwvc3hi.png" alt="">
+                          <p class="pt-2">
+                            To prevent Typescript from throwing an error, you can add a placeholder code in each file like so:
+                          </p>
+                          <h3 class="pt-3">
+                            Building the List page
+                          </h3>
+                          <p class="pt-2">
+                            To create our list, we will use Ant design's Table component to render the data from our API, row by row, as a table.
+                          </p>
+                          <p class="pt-2">
+                            The Table component will simplify our workflow, and fortunately for us, it integrates well with refine. Functionalities such as pagination and routing are implemented out of the box.
+                          </p>
+                          <p class="pt-2">
+                            In the code above, we're using the useTable hook to fetch data from our endpoint and pass its value to the Table component via the tableprops property. Then we set unique keys for each record from the API using the rowkey prop.
+                          </p>
+                          <p class="pt-2">
+                            refine handles every fetch request under the hood. The useTable hook is one of many hooks it uses to distribute API responses and manage functionalities across its components.
+                          </p>
+                          <p class="pt-2">
+                            On the other hand, the dataIndex property is used to map the component to a matching key from the API response. It tells a Table.column component what property from the response object to display on its row.
+                          </p>
+                          <p class="pt-2">
+                            That's it for the list page, save your progress and go back to the browser. You should see a nicely rendered table with pagination and routing implemented automatically.
+                          </p>
+                          <img width="100%" src="https://res.cloudinary.com/practicaldev/image/fetch/s--A44zEnrX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b1bzcbc0329ul3wk9k5s.gif" alt="">
+                          <p class="pt-2">
+                            As you can see, the create button routes us to the Create page when clicked. Right now, it just renders the placeholder text we set earlier. Next, we will set up our dynamic form inside the PostCreate page.
+                          </p>
+                          <h3 class="pt-3">
+                            Creating a form
+                          </h3>
+                          <p class="pt-2">
+                            Ant design also provides a form component that ships with various functionalities such as data collection, styling, and data scope management out of the box. The component streamlines the process of quickly building a form in React.
+                          </p>
+                          <p class="pt-2">
+                            useForm is a refine hook for handling form data. It offers adapters that let refine integrate with Ant design's Form component.
+                          </p>
+                          <p class="pt-2">
+                            In the code above, we destructured the formProps and saveButtonProps properties from the useForm hook, then we passed them to the Create and Form components, respectively.
+                          </p>
+                          <p class="pt-2">
+                            The formProps property contains all the necessary properties for the form to handle the Post request for its data automatically.
+                          </p>
+                          <img width="100%" src="https://res.cloudinary.com/practicaldev/image/fetch/s--BvtuRYrk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ex5rq56f2hgqwxesqdpd.png" alt="">
+                          <h3 class="pt-3">
+                            Adding form items
+                          </h3>
+                          <p class="pt-2">
+                            The <Form.item> component is a sub-component of the Form component. It accepts several props for configuring and adding basic or custom validation to input fields.
+                          </p>
+                          <p class="pt-2">
+                            Here's a list of some of its props:
+                          </p>
+                          <ul>
+                            <li>
+                              name: This is for setting a unique name for an input field.
+                            </li>
+                            <li>
+                              label: This prop is for assigning a label to input fields
+                            </li>
+                            <li>
+                              rules: This prop is for setting custom validation rules on an input field
+                            </li>
+                          </ul>  
+                            <p class="pt-2">
+                              Here, we're using the name and label props to assign each input field a unique name and a label element, respectively.
+                            </p>
+                            <p class="pt-2">
+                              We also gave the <Form> component a layout prop with a vertical value. This will let the labels display on a block layout rather than the default inline layout.
+                            </p>
+                            <p class="pt-2">
+                              In the subsequent sections, we'll learn how to add a more complex validation to our form. For now, this will do.
+                            </p>
+                            <h3 class="pt-3 pb-3">
+                              Live StackBlitz Example
+                            </h3>
+                            <hr>
+                            
+                            <section>
+                              <header class="row d-flex aling-items-center justify-content-between mb-3">
+                                <div class="col d-flex aling-items-center">
+                                  <h6>
+                                    Top comments (1)
+                                  </h6>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="ms-1 bi bi-chevron-expand" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z"/>
+                                  </svg>
+                                </div>
+                                <div class="col d-flex justify-content-end">
+                                  <button type="button" class="btn btn-outline-secondary">
+                                    Subscribe
+                                  </button>
+                                </div>
+                              </header>
+                              <div class="row g-2 comments-container d-flex align-content-center justify-content-center">
+                                <div class="col-md-2 container">
+                                  <img width="25" class="rounded-circle" src="./images/img-6.jpeg" alt="">
+                                </div>
+                                <div class="col-md-10">
+                                  <input type="text" class="form-control border-secondary p-3 mb-3" placeholder="Add to the discussion">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col">
+                                  <img width="25" class="rounded-circle" src="./images/img-4.jpeg" alt="">
+                                </div>
+                                <div class="col-10 container p-3 bg-light bg-opacity-10 border border-secondary rounded">
+                                  <p class="text-muted">
+                                    Lotfi Jebali &nbsp; <small>19 nov</small>
+                                  </p>
+                                  <p class="pt-1">
+                                    Well explained, thank you.
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="col d-flex ms-5">
+                                <a href="#" class="text-muted text-decoration-none ms-2 d-flex" id="interaction-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                                      </svg>
+                                      &nbsp; 2 likes
+                                </a>
+                                
+                                <a href="#" class="text-muted text-decoration-none d-flex" id="interaction-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">
+                                        <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"/>
+                                      </svg>
+                                      &nbsp; Reply
+                                </a>
+                            </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4" id="aside__article">
+              <div class="col sticky-top">
+                <div class="card bg-light mb-3" id="aside__article--card">
+                    <div class="card-body w-100 h-100 p-0 d-flex flex-column justify-content-around">
+                        <div class="aside__header">
+                            <a class="d-flex flex-row align-items-end ms-3 h-100" href="#">
+                                <span class="me-3 h-100" id="article__img"><img class="aside__img rounded-circle w-100 h-75" src="./img/profile.jpg" alt=""></span>
+                                <span id="card__title"><h2 class="mb-0 d-flex align-items-end pt-2">Sm0ke</h2></span>
+                            </a>
+                        </div>
+                        <div class="card__btn d-flex justify-content-center mt-3 mb-3 w-100 h-100">
+                            <a href="#" class="btn" id="btn__first">Follow</a>
+                        </div>
+                        <ul class="card-text list-group">
+                            <li>
+                                <p class="article__li w-100 h-100 text-muted">#Automation, my favorite programming language </p>
+                            </li>
+                            <li>
+                                <p id="li__title">LOCATION</p>
+                                <P class="text-muted">Constanta, Romania</P>
+                            </li>
+                            <li>
+                                <p id="li__title">EDUCATION</p>
+                                <P class="text-muted">Hack Land</P>
+                            </li>
+                            <li>
+                                <p id="li__title">WORK</p>
+                                <P class="text-muted">Founder @ AppSeed.us </P>
+                            </li>
+                            <li>
+                                <p id="li__title">JOINED</p>
+                                <P class="text-muted">3 abr 2019</P>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="card bg-light" id="aside__article--card2">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex card__item" id="card__article--li2">
+                            <h5>More from <a href="#">Sm0ke</a></h5>
+                        </li>
+                        <li class="list-group-item" id="card__li">
+                            <a id="aside__article--li" href="#">Flask & Stripe eCommerce - Deploy LIVE on Render</a>
+                            <h6 class="mt-2 text-muted">
+                                <ul class="d-flex flex-row flex-wrap w-100 ps-0">
+                                    <li>#webdev</li>
+                                    <li>#stripe</li>
+                                    <li>#flask</li>
+                                    <li>#ecommerce</li>
+                                </ul>
+                            </h6>
+                        </li>
+                        <li class="list-group-item" id="card__li">
+                            <a id="aside__article--li" href="#">Django & Docker - SQLite, MySql, and PostgreSQL samples</a>
+                            <h6 class="mt-2 text-muted">
+                                <ul class="d-flex flex-row flex-wrap w-100 ps-0">
+                                    <li>#webdev</li>
+                                    <li>#docker</li>
+                                    <li>#django</li>
+                                    <li>#opensource</li>
+                                </ul>
+                            </h6>
+                        </li>
+                        <li class="list-group-item" id="card__li">
+                            <a id="aside__article--li" href="#">Deploy Flask with Drag & Drop - Bootstrap 5 Design</a>
+                            <h6 class="mt-2 text-muted">
+                                <ul class="d-flex flex-row flex-wrap w-100 ps-0">
+                                    <li>#webdev</li>
+                                    <li>#deployment</li>
+                                    <li>#flask</li>
+                                    <li>#appseed</li>
+                                </ul>
+                            </h6>
+                    </ul>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+       
+    </main>
+    <footer class="footer__text">
+      <div>
+        <a href="#">DEV Community 👩‍💻👨‍💻</a>— A constructive and inclusive social network for software developers. With you every step of your journey.
+         Built on <a href="#"> Forem</a>— the <a href="#">open source</a> software that powers <a href="#">DEV</a> and other inclusive communities.
+          Made with love and <a href="#">Ruby on Rails</a>. DEV Community 👩‍💻👨‍💻 © 2016 - 2022.            
+     </div>
+     <div class="footer__img">
+         🌱
+     </div>
+    </footer>
+    <section class="fixed-bottom" id="all__footer">
+      <div class="container-fluid d-flex">
+        <ul class="">
+          <li>
+             <div class="art__heart">
+             <img src="./img/heart-svgrepo-com.svg" width="20" height="20" alt="">
+             <span>4</span>
+            </div>
+          </li>
+          <li>
+            <div class="art__comment">
+              <img src="./img/comment-svgrepo-com.svg" width="20" height="20" alt="">
+              <span>0</span>
+            </div>
+          </li>
+          <li>
+            <div class="art__save">
+              <img src="./img/bookmark-save-svgrepo-com.svg" width="20" height="20" alt="">
+              <span>4</span>
+            </div>
+          </li>
+          <li>
+             <div class="art__more">...</div>
+          </li>
+        </ul>          
+      </div>
+    </section>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
+      

@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+   background-color: #f5f5f5;
+}
+@mixin flexTemplate {
+    display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+}
+
+.postForm{
+    display: grid;
+    padding: 0 16px;
+    height: 100vh;
+    gap: 0 var(--layout-gap);
+    margin: 0 5%;
+    font-size: var(--fs-base);
+    grid-template-columns: 100%;
+    // grid-template-rows: min-content 1fr min-content;
+    --article-form-actions-height: 88px;
+
+
+    .formArea{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgb(172, 171, 171);
+        border-radius: 10px;
+        background-color: white;
+        height: 80%
+    }
+    .postHeader{
+        @include flexTemplate;
+        height: fit-content;
+    }
+        .postNav{
+            width: 40%;
+        }
+    .postBtn{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        margin: 0;
+    }
+
+    .post{
+        box-shadow: none;
+        border: none;
+        width: 100%;
+        height: 100%;
+        font-family: inherit;
+        font-size: xx-large;
+        font-weight: bolder;
+    }
+    .labelForm{
+        margin: 18px 64px;
+        width: 50%;
+    }
+    .postArea{
+        padding: 32px 64px;
+        height: 60%;
+    }
+    .postTitle{
+        padding: 32px 64px;
+        height: 20%;  
+    }
+    .bodyBtn{
+        padding: 8px 64px;
+        height: 10%; 
+        width: 100%;
+        background-color: #f9f9f9;
+    }
+    .post::placeholder{
+        font-family: inherit;
+        font-size: xx-large;
+        font-weight: bolder;
+    }
+
+    .asideForm{
+        display: block;
+    }
+    .navForm{
+        @include flexTemplate;
+        width: 50%;
+    }
+}

@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+.postForm {
+  display: grid;
+  padding: 0 16px;
+  height: 100vh;
+  gap: 0 var(--layout-gap);
+  margin: 0 5%;
+  font-size: var(--fs-base);
+  grid-template-columns: 100%;
+  --article-form-actions-height: 88px;
+}
+.postForm .formArea {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(172, 171, 171);
+  border-radius: 10px;
+  background-color: white;
+  height: 80%;
+}
+.postForm .postHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.postForm .postNav {
+  width: 40%;
+}
+.postForm .postBtn {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0;
+}
+.postForm .post {
+  box-shadow: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+.postForm .labelForm {
+  margin: 18px 64px;
+  width: 50%;
+}
+.postForm .postArea {
+  padding: 32px 64px;
+  height: 60%;
+}
+.postForm .postTitle {
+  padding: 32px 64px;
+  height: 20%;
+}
+.postForm .bodyBtn {
+  padding: 8px 64px;
+  height: 10%;
+  width: 100%;
+  background-color: #f9f9f9;
+}
+.postForm .post::-moz-placeholder {
+  font-family: inherit;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+.postForm .post:-ms-input-placeholder {
+  font-family: inherit;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+.postForm .post::placeholder {
+  font-family: inherit;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+.postForm .asideForm {
+  display: block;
+}
+.postForm .navForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}/*# sourceMappingURL=createPost.css.map */

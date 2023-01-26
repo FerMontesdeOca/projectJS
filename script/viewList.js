@@ -113,3 +113,43 @@ const fetchPosts = async () => {
 
 
 
+/**
+ *           currentPage++;
+      // Oculta el mensaje de carga
+      document.getElementById('loading').style.display = 'none';
+      // Cambia la variable isLoading a false
+      isLoading = false;
+      // Muestra los nuevos datos en la página
+      displayData();
+    }
+
+    // Función para mostrar los datos en la página
+    function displayData() {
+      // Recorre cada elemento del array de datos
+      for (let item of data) {
+        // Crea un nuevo elemento div para cada elemento del array
+        const div = document.createElement('div');
+        div.classList.add("item");
+        // Agrega la información del elemento al div
+        div.innerHTML = `<h2>${item.title}</h2><p>${item.description}</p>`;
+        // Agrega el div al contenedor de la página
+        document.getElementById('content').appendChild(div);
+      }
+    }
+
+    // Función para detectar cuando el usuario llega al final de la página
+    function handleScroll() {
+      // Obtiene la posición del scroll actual
+      const scrollPosition = window.pageYOffset;
+      // Obtiene la altura de la página
+      const windowHeight =window.innerHeight;
+// Obtiene la altura total del documento
+const documentHeight = document.body.offsetHeight;
+// Comprueba si el usuario ha llegado al final de la página y si no se está cargando actualmente más datos
+if (scrollPosition + windowHeight >= documentHeight && !isLoading) {
+// Llama a la función para obtener más datos
+fetchData();
+}
+}
+
+ */

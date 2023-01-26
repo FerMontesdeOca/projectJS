@@ -23,8 +23,8 @@
           /></a>
         <nav class="postNav">
           <ul class="postBtn">
-            <li><button type="button" class="btn btn-light">Edit</button></li>
-            <li><a href="preview.html" class="btn btn-light">preview</a></button></li>
+            <li><button type="button" class="btn btn-light" >Edit</button></li>
+            <li><a class="btn btn-light" id="preview">preview</a></button></li>
           </ul>
         </nav>
     </div>
@@ -42,15 +42,15 @@
       </header>
       <div class="formArea col-6">
         <div class="labelForm">
-          <label for="" >Add a cover image
-            <input class="inputForm" type="file">
+          <label for="" >ingresa url de la foto
+            <input class="inputForm" id="imagen" type="text">
           </label>
         </div>
         <div class="postTitle">
           <textarea
             class="post"
             name="Title"
-            id=""
+            id="titulo"
             placeholder="New post title here..."
           ></textarea>
         </div>
@@ -129,19 +129,19 @@
           </button>
         </div>
         <div class="postArea">
-          <textarea class="post" name="postBody" id="" cols="30" rows="10">
+          <textarea class="post" name="postBody" id="texto" cols="30" rows="10">
           </textarea>
         </div>
       </div>
       <aside class=" asideForm col-3"></aside>
       <footer>
-            <buton class="btn btn-primary">Publish</buton>
+            <buton class="btn btn-primary" >Publish</buton>
             <buton class="btn btn-outline-primary">Save draft</buton>
             <buton class="btn btn-outline-primary" >Revert new changes</buton>
       </footer>
     </div>
     </form>
-    <script src="peticiones.js" type="module"></script>
+    <script src="createPost.js" type="module"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"

@@ -43,11 +43,9 @@ export const getPublicaciones = async () => {
 export const deletePublicaciones = async (id) => {
   try {
     const response = await fetch(
-    `https://devto-4e872-default-rtdb.firebaseio.com?id=${id}/.json`
+    `https://devto-4e872-default-rtdb.firebaseio.com/publicaciones/${id}/.json/`
     ,{method:"DELETE"});
-    const result = await response.json();
-    const data = parseInfo(result);
-    return data;
+
   } catch (error) {
     console.log(error);
   }
@@ -66,3 +64,4 @@ const publicacion = {
   tiempoLectura: 0,
 };
 
+deletePublicaciones("-NMgG9fdCwVXC9P0O4-w")

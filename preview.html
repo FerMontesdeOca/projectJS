@@ -10,52 +10,57 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./style/createPost/createPost.css" />
+    <link rel="stylesheet" href="./style/style.css" />
     <title>Post</title>
   </head>
   <body>
-    <form class="postForm" action="">
-      <div class="row">
-        <header class="postHeader">
-          <div class="navForm">
-            <a href="index.html"
-              ><img src="./img/logo.png" width="50" height="50" alt=""
-            /></a>
-            <nav class="postNav">
-              <ul class="postBtn">
-                <li>
-                  <button type="button" class="btn btn-light">Edit</button>
-                </li>
-                <li>
-                  <button type="button" class="btn btn-light">Preview</button>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div>
-            <button class="btn btn-default">
-              <img
-                class="btnImag"
-                src="./img/post/icons8-eliminar-24.png"
-                alt="bold"
-                width="20"
-                height="20"
-              />
-            </button>
-          </div>
-        </header>
-        <div class="card mb-3" id="dashboard" overclof=scroll>
-
-              
-           
-          </div>
-        <footer>
-          <buton class="btn btn-primary">Publish</buton>
-          <buton class="btn btn-outline-primary">Save draft</buton>
-          <buton class="btn btn-outline-primary">Revert new changes</buton>
-        </footer>
+    <header class="postHeader d-flex " style="width: 100%">
+      <div
+        class="navForm d-flex justify-content-between align-items-end"
+        style="margin-left: 15%; width: 85%"
+      >
+        <div class="d-flex align-items-end">
+          <a href="index.html" class=""
+            ><img src="./img/logo.png" width="50" height="50" alt=""
+          /></a>
+          <span>Create Post</span>
+        </div>
+        <nav
+          class="postNav d-flex  justify-content-between align-items-end"
+          style="width: 30%"
+        >
+          <ul class="postBtn d-flex " >
+            <li class="" >
+              <a class="btn  btn-light"  href="createPost.html">Edit</a>
+            </li>
+            <li>
+              <a class="btn btn-light" >Preview</a>
+            </li>
+          </ul>
+          <button class="btn btn-default ">
+            <img
+              class="btnImag"
+              src="./img/post/icons8-eliminar-24.png"
+              alt="bold"
+              width="20"
+              height="20"
+            />
+          </button>
+        </nav>
       </div>
-    </form>
+    </header>
+
+    <div class="card mb-3" style="width: 70%;  margin: 0 auto;" id="dashboard" overflow="scroll">
+      <div class="card-body card-div" id="card-body"></div>
+    </div>
+    
+
+    <footer>
+      <buton class="btn btn-primary" id="publicar">Publish</buton>
+      <buton class="btn btn-outline-primary" id="guardar" >Save draft</buton>
+      <buton class="btn btn-outline-primary reverti" id="opciones">Post Options</buton>
+    </footer>
+
     <script src="preview.js" type="module"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

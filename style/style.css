@@ -667,6 +667,21 @@ footer {
   background-color: #e5e5e5;
 }
 
+.etiquetas {
+  margin-left: 5px;
+}
+
+.imagen--preview {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.card-div {
+  margin-left: 10%;
+  overflow: scroll;
+  height: 30rem;
+}
+
 * {
   margin: 0;
   padding: 0;

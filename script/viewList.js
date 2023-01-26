@@ -3,6 +3,83 @@ function showLinks() {
     document.getElementById("month-link-2").style.display = "block";
   }
 
+
+const fetchPosts = async () => {
+    try {
+      const response = await fetch("https://practica-99535-default-rtdb.firebaseio.com/.json");
+      allPosts = await response.json();
+      displayPosts(allPosts);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
+  // Create and return a DOM element for a post
+  const createPostElement = (post) => {
+    // prueba dom elements
+    const postContainer = document.createElement("div");
+    const postTitle = document.createElement("h3");
+    const postReaction = document.createElement("p");
+    const postDate = document.createElement("p");
+  
+    // Add data to DOM elements
+    postTitle.innerText = post.title;
+    postReaction.innerText = `Reaction: ${post.reaction}`;
+    postDate.innerText = post.date;
+  
+    // Append elements to post container
+    postContainer.appendChild(postTitle);
+    postContainer.appendChild(postReaction);
+    postContainer.appendChild(postDate);
+  
+    return postContainer;
+  };
+  
+  // Display posts in the webpage
+  const displayPosts = (posts) => {
+    const postsContainer = document.getElementById("posts-container");
+    postsContainer.innerHTML = ""; // Clear previous posts
+    posts.forEach((post) => {
+      const postElement = createPostElement(post);
+      postsContainer.appendChild(postElement);
+    });
+  };
+  
+  // Filter posts by year
+  const filterPostsByYear = (year) => {
+    const filteredPosts = allPosts.filter((post) => {
+      return new Date(post.date).getFullYear() === year;
+    });
+    displayPosts(filteredPosts);
+  };
+  
+  // Filter posts by month
+  const filterPostsByMonth = (month) => {
+    const filteredPosts = allPosts.filter((post) => {
+      return new Date(post.date).getMonth() === month;
+    });
+    displayPosts(filteredPosts);
+  };
+  
+  // Add event listeners to year and month links
+  const yearLink = document.getElementById("year-link-2");
+  yearLink.addEventListener("click", () => {
+    const selectedYear = document.getElementById("select-year").value;
+    filterPostsByYear(selectedYear);
+  });
+  
+  const monthLink = document.getElementById("month-link-2");
+  monthLink.addEventListener("click", () => {
+    const selectedMonth = document.getElementById("select-month").value;
+    filterPostsByMonth(selectedMonth);
+  });
+  
+  fetchPosts();
+  
+  
+
+ 
+
   const nuevaPost = async (postJson) => {
     try {
       const response = await fetch(
@@ -19,7 +96,7 @@ function showLinks() {
       console.error(error);
     }
   };
-  
+
   const postJson = {
     title: "My new post",
     reaction: Math.floor(Math.random() * 100) + 1,

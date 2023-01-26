@@ -88,4 +88,39 @@ body{
         @include flexTemplate;
         width: 50%;
     }
+    .list-disc{
+        list-style: none;
+    }
+}
+
+@media(min-width: 1024px){
+    .postForm{
+        display: grid;
+        padding: 0 16px;
+        height: 100vh;
+        gap: 0 var(--layout-gap);
+        margin: 0 15%;
+        font-size: var(--fs-base);
+        grid-template-columns: 100%;
+        // grid-template-rows: min-content 1fr min-content;
+        --article-form-actions-height: 88px;
+
+    .bodyBtn{
+        padding: 8px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .btnImages{
+        padding: 0 1px;
+    }
+}
+}
+
+@media(max-width: 768px){
+    .btnSeis{
+        display: none;
+    }
+    .stickyHeader{
+        display: none;
+    }
 }

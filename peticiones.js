@@ -13,7 +13,7 @@ const parseInfo = (info) => {
 export const nuevaPost = async (postJson) => {
   try {
     const response = await fetch(
-      "https://devto-4e872-default-rtdb.firebaseio.com/publicaciones/.json/",
+      "https://devto-4e872-default-rtdb.firebaseio.com/.json/",
       {
         method: "POST",
         header: { "Consten-type": "application/json;charset=UTF-8" },
@@ -43,25 +43,27 @@ export const getPublicaciones = async () => {
 export const deletePublicaciones = async (id) => {
   try {
     const response = await fetch(
-    `https://devto-4e872-default-rtdb.firebaseio.com/publicaciones/${id}/.json/`
+    `https://devto-4e872-default-rtdb.firebaseio.com/${id}/.json/`
     ,{method:"DELETE"});
 
   } catch (error) {
     console.log(error);
   }
 };
+
+
 const publicacion = {
-  user: "prueba",
-  datePublish: "12-01-2023",
-  foto: "https://media.licdn.com/dms/image/C4E0BAQH_FgH2PtTNHA/company-logo_200_200/0/1528521011260?e=2147483647&v=beta&t=R5VCc2GH1U_axoFZAzg67DHCa2W5DO-GZ2jQ2m74IzA",
-  tituto: "¡Tengo que pasar el bootkamp!",
-  clases: [],
-  imgUSer: "",
-  texto: "",
-  etiquetas: ["javascript", "html", "css"],
-  reacciones: 0,
-  comentarios: [],
-  tiempoLectura: 0,
+  user: "benjamin franklin",
+  datePublish: "26/01/2023",
+  imagen:
+    "https://www.datocms-assets.com/48401/1627664298-javascript.png?fit=max&w=900",
+  titulo: "Extensive List of Best Development Resources - 121 Links to Guides, Cheat Sheets and More List of Resources ",
+  clases: ["javaScript","css","html"],
+  imgUSer: "https://www.biografiasyvidas.com/biografia/f/fotos/franklin.jpg",
+  texto: "loremipsum",
+  etiquetas: ["java", "html", "css"],
+  reacciones: 12,
+  comentarios: ["","",""],
+  tiempoLectura: 3,
 };
 
-deletePublicaciones("-NMgG9fdCwVXC9P0O4-w")

@@ -1,9 +1,9 @@
-import {  getPublicaciones } from "./peticiones.js";
+import {  getPublicaciones } from "./javaScript/peticiones.js";
 
 const dashboard = document.querySelector("#dashboard");
 
 const card = (publicacion) => {
-    console.log(publicacion)
+    console.log(publicacion.id)
   //contenedor principal
   const cardPublicacion = document.createElement("div");
   cardPublicacion.classList.add("container-fluid");
@@ -55,7 +55,7 @@ const card = (publicacion) => {
   const linkTitulo=document.createElement("a")
   linkTitulo.setAttribute("id", "title-link");
   linkTitulo.textContent=publicacion.titulo
-  linkTitulo.href="/articulo.html?${publicacion.id}"
+  linkTitulo.href=`/articulo.html?${publicacion.id}`
   tituloInfo.appendChild(linkTitulo)
   info.appendChild(tituloInfo)
 

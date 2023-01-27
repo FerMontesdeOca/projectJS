@@ -52,19 +52,16 @@ export const deletePublicaciones = async (id) => {
   }
 };
 
-
-const publicacion = {
-  user: "benjamin franklin",
-  datePublish: "26/01/2023",
-  imagen:
-    "https://www.datocms-assets.com/48401/1627664298-javascript.png?fit=max&w=900",
-  titulo: "Extensive List of Best Development Resources - 121 Links to Guides, Cheat Sheets and More List of Resources ",
-  clases: ["javaScript","css","html"],
-  imgUSer: "https://www.biografiasyvidas.com/biografia/f/fotos/franklin.jpg",
-  texto: "loremipsum",
-  etiquetas: ["java", "html", "css"],
-  reacciones: 12,
-  comentarios: ["","",""],
-  tiempoLectura: 3,
+export const getPublicacion = async (id) => {
+  try {
+    const response = await fetch(
+      `https://devto-4e872-default-rtdb.firebaseio.com/${id}/.json`
+    );
+    const result = await response.json();
+    //const data = parseInfo(result);
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
 };
 

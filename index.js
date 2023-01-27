@@ -55,7 +55,7 @@ const card = (publicacion) => {
   const linkTitulo=document.createElement("a")
   linkTitulo.setAttribute("id", "title-link");
   linkTitulo.textContent=publicacion.titulo
-  linkTitulo.href=`/articulo.html?${publicacion.id}`
+  linkTitulo.href=`../views/articule.html?id=${publicacion.id}`
   tituloInfo.appendChild(linkTitulo)
   info.appendChild(tituloInfo)
 

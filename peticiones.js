@@ -13,7 +13,7 @@ const parseInfo = (info) => {
 export const nuevaPost = async (postJson) => {
   try {
     const response = await fetch(
-      "https://devto-4e872-default-rtdb.firebaseio.com/.json/",
+      "https://devto-4e872-default-rtdb.firebaseio.com/.json",
       {
         method: "POST",
         header: { "Consten-type": "application/json;charset=UTF-8" },
@@ -21,6 +21,7 @@ export const nuevaPost = async (postJson) => {
       }
     );
     const result = await response.json();
+    console.log(result)
     alert("el post fue añadido correctamente");
   } catch (error) {
     alert("hubo un error intentalo de nuevo");
@@ -43,7 +44,7 @@ export const getPublicaciones = async () => {
 export const deletePublicaciones = async (id) => {
   try {
     const response = await fetch(
-    `https://devto-4e872-default-rtdb.firebaseio.com/${id}/.json/`
+    `https://devto-4e872-default-rtdb.firebaseio.com/${id}/.json`
     ,{method:"DELETE"});
 
   } catch (error) {

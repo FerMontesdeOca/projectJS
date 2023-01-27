@@ -7,7 +7,7 @@ function showLinks() {
 const fetchPosts = async () => {
     try {
       const response = await fetch("https://practica-99535-default-rtdb.firebaseio.com/.json");
-      allPosts = await response.json();
+      const allPosts = await response.json();
       displayPosts(allPosts);
     } catch (error) {
       console.error(error);
@@ -74,7 +74,7 @@ const fetchPosts = async () => {
     filterPostsByMonth(selectedMonth);
   });
   
-  fetchPosts();
+  //fetchPosts();
   
   
 
@@ -108,7 +108,7 @@ const fetchPosts = async () => {
     const daysAgo = moment(date).diff(new Date(), "days");
     const dateElement = document.createTextNode(`${formattedDate} (${daysAgo} days ago)`);
     const targetElement = document.getElementById("date");
-    targetElement.appendChild(dateElement);
+   // targetElement.appendChild(dateElement);
   });
 
 

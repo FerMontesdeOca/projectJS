@@ -79,7 +79,7 @@ const card=(publicacion)=>{
 }
 
 }
-//const publicacion=window.location.search
+
 const publicacion = {
     user: "benjamin franklin",
     datePublish: "",

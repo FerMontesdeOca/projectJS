@@ -41,13 +41,14 @@ export const getPublicaciones = async () => {
   }
 };
 
-export const deletePublicaciones = async (id) => {
+export const deletePublicacion = async (id) => {
   try {
     const response = await fetch(
     `https://devto-4e872-default-rtdb.firebaseio.com/${id}/.json`
     ,{method:"DELETE"});
-
+    alert("la publicacion ha sido borrada")
   } catch (error) {
+    alert("ocurrio un error intentelo de nuevo")
     console.log(error);
   }
 };

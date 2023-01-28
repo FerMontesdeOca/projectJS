@@ -1,10 +1,21 @@
-import { nuevaPost } from "./peticiones.js";
+import { nuevaPost, getPublicacion } from "./peticiones.js";
 import { publicacion } from "../Dao/publicacion.js";
+import { getParamByName } from "./url.js";
 const urlImage = document.querySelector("#inputForm");
 const titulo = document.querySelector("#titlePost");
 const texto = document.querySelector("#postText");
 const btnPreview = document.querySelector("#preview");
 const botonNuevo = document.querySelector("#botonNuevo");
+
+const llenarDatos=async ()=>{
+    const id=getParamByName("id")
+    const publicacionEditar=await getPublicacion(id)
+    urlImage.textContent=publicacionEditar.imagen
+    
+    titulo.textContent=publicacionEditar.titulo
+    console.log(titulo)
+    texto.value=publicacionEditar.texto
+}
 
 botonNuevo.addEventListener("click", async (evento) => {
   
@@ -46,3 +57,5 @@ urlImage.addEventListener("change", (evento) => {
   publicacion.imagen = evento.target.value;
   console.log(publicacion);
 });
+
+await llenarDatos()

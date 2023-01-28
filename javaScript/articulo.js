@@ -1,5 +1,5 @@
 import { getParamByName } from "./url.js";
-import { getPublicacion } from "./peticiones.js";
+import { getPublicacion , deletePublicacion} from "./peticiones.js";
 
 const mostrarArticulo = async () => {
   const id = getParamByName("id");
@@ -37,5 +37,19 @@ const mostrarArticulo = async () => {
   parrafoTexto.textContent=publicacion.texto
   tituloPublicacion.appendChild(parrafoTexto)
 };
+const botonBorrar=document.querySelector("#botonBorrar")
+botonBorrar.addEventListener("click",async (evento)=>{
+  const id = getParamByName("id");
+  await deletePublicacion(id)
+  window.location.href="http://127.0.0.1:5500/index.html"
+
+
+})
+const botonEditar=document.querySelector("#botonEditar")
+botonEditar.addEventListener("click",(evento)=>{
+  const id = getParamByName("id");
+  window.location.href=`http://127.0.0.1:5500/views/edit.html?id=${id}`
+
+})
 
 mostrarArticulo();

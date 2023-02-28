@@ -12,6 +12,7 @@ export const createPost = async (req,res)=>{
       dataPost,
       newPost
     }
+    //console.log(objRes);
     return res.json(objRes);
   } catch (error) {
     console.log(error);
@@ -22,11 +23,30 @@ export const createPost = async (req,res)=>{
 export const getLastPost = async (req,res)=>{
   try {
     
-    const lastPost = await Post.find().limit(1).sort({$natural:-1});
+    const lastPost = await Post.find().limit(4).sort({$natural:-1});
 
     const objRes= {
       msg: 'Retrieve Last Post:..',
       lastPost
+    }
+    return res.json(objRes);
+  } catch (error) {
+    console.log(error);
+    return res.json(error);
+  }
+}
+
+export const getPost = async (req,res)=>{
+  const {id} = req.params;
+  try {
+    const dataPost = await Post.findOne({_id:id});
+
+    //if (dataPost.titlePost) showDataPost(dataPost);
+
+    const objRes= {
+      msg: 'Retrieve Post By ID:..',
+      dataPost,
+      id
     }
     return res.json(objRes);
   } catch (error) {

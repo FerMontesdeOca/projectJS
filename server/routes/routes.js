@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createPost, getLastPost } from "../controllers/apiBack.js";
+import { createPost, getLastPost, getPost } from "../controllers/apiBack.js";
 
 export const routes = Router();
 
@@ -10,3 +10,5 @@ routes.get("/", (req, res) => {
 routes.post('/createPost',createPost);
 
 routes.get('/getLastPost',getLastPost);
+
+routes.get('/getPost/:id',getPost);
